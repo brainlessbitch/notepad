@@ -1,11 +1,15 @@
+using Gtk;
+
 class mainMenuActions {
-  /* public void newFile(Gtk.MenuItem source) {
-    Notepad.textBuffer.text = "";
+  Notepad notepad;
+
+  public void newFile(Gtk.MenuItem source) {
+    textBuffer.text = "";
   }
 
   public void openFile(Gtk.MenuItem source) {
     var fileChooser = new FileChooserDialog(
-      "Open File", this, FileChooserAction.OPEN,
+      "Open File", notepad, FileChooserAction.OPEN,
       "Cancel", ResponseType.CANCEL, 
       "Open", ResponseType.ACCEPT
     );
@@ -20,14 +24,14 @@ class mainMenuActions {
           try {
             bool success = GLib.FileUtils.get_contents(filename, out fileContents);
             if (success) {
-              this.textBuffer.text = fileContents;
+              textBuffer.text = fileContents;
             } else {
               print("Error reading file\n");
             }
           } catch (GLib.FileError e) {
             print("File error: %s\n", e.message);
           }
-    
+  
       fileChooser.destroy();
     }
   }
@@ -42,7 +46,7 @@ class mainMenuActions {
 
   public void saveFileAs(Gtk.MenuItem source) {
     var fileChooser = new FileChooserDialog(
-      "Save As", this, FileChooserAction.SAVE,
+      "Save As", notepad, FileChooserAction.SAVE,
       "Cancel", ResponseType.CANCEL, 
       "Save", ResponseType.ACCEPT
     );
@@ -61,10 +65,10 @@ class mainMenuActions {
 
   public void save(string fileName) {
     try {
-      string text = this.textBuffer.text;
+      string text = textBuffer.text;
       GLib.FileUtils.set_contents(fileName, text);
     } catch (GLib.FileError e) {
       print("File error: %s\n", e.message);
     }
-  } */
+  }  
 }

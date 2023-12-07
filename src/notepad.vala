@@ -1,9 +1,10 @@
 using Gtk;
 
+public TextBuffer textBuffer;
+public string fileName;
+
 class Notepad : Window {
-  TextBuffer textBuffer;
   TextView textView;
-  string fileName;
 
   construct {
     title = "Notepad";

@@ -10,6 +10,7 @@ A tiny notepad application
 - [ ] New name
 - [ ] Add icon
 - [ ] Markup ...*maybe*
+- [ ] Spellcheck
 
 #
 Contributions and suggestions are welcome and appreciated ❤️

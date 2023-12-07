@@ -4,38 +4,38 @@ public TextBuffer textBuffer;
 public string fileName;
 
 class Notepad : Window {
-  TextView textView;
+    TextView textView;
 
-  construct {
-    title = "Notepad";
+    construct {
+        title = "Notepad";
 
-    var headerBar = new NotepadHeader();
-    set_titlebar(headerBar.headerBar());
-    set_default_size(400, 300);
+        var headerBar = new NotepadHeader();
+        set_titlebar(headerBar.headerBar());
+        set_default_size(400, 300);
 
-    textBuffer = new TextBuffer(null);
-    textView = new TextView.with_buffer(textBuffer);
+        textBuffer = new TextBuffer(null);
+        textView = new TextView.with_buffer(textBuffer);
         
-    textView.set_wrap_mode(WrapMode.WORD);
+        textView.set_wrap_mode(WrapMode.WORD);
 
-    var scrolledWindow = new ScrolledWindow(null, null);
-    scrolledWindow.add(textView);
+        var scrolledWindow = new ScrolledWindow(null, null);
+        scrolledWindow.add(textView);
 
-    scrolledWindow.set_margin_top(12);
-    scrolledWindow.set_margin_end(12);
-    scrolledWindow.set_margin_bottom(12);
-    scrolledWindow.set_margin_start(12);
+        scrolledWindow.set_margin_top(12);
+        scrolledWindow.set_margin_end(12);
+        scrolledWindow.set_margin_bottom(12);
+        scrolledWindow.set_margin_start(12);
 
-    var vbox = new Box(Gtk.Orientation.VERTICAL, 0);
-    vbox.pack_start(scrolledWindow, true, true, 0);
+        var vbox = new Box(Gtk.Orientation.VERTICAL, 0);
+        vbox.pack_start(scrolledWindow, true, true, 0);
 
-    add(vbox);
+        add(vbox);
 
-    delete_event.connect(() => {
-      Gtk.main_quit();
-      return false;
-    });
-  }
+        delete_event.connect(() => {
+            Gtk.main_quit();
+            return false;
+        });
+    }
 }
 
 int main(string[] args) {

@@ -11,6 +11,7 @@ A tiny notepad application
 - [ ] Add icon
 - [ ] Markup ...*maybe*
 - [ ] Spellcheck
+- [ ] Font options
 
 #
 Contributions and suggestions are welcome and appreciated ❤️
